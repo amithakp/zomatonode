@@ -1,0 +1,17 @@
+var express = require('express');
+var app = express(); //object created for express
+var dotenv = require('dotenv');
+dotenv.config();
+var port = process.env.PORT || 8124;
+
+//first default route
+app.get('/',(req,res) => {
+    res.send("Hi From Express");
+}) //second route
+app.get('/location',(req,res) => {
+    res.send("This is location");
+})
+
+app.listen(port,() => {
+    console.log(`LIsten to port:${port}`)
+})
